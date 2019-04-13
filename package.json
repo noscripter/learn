@@ -7,7 +7,9 @@
     "compile": "harp compile",
     "start": "harp server",
     "test": "harp compile",
-    "preversion": "harp compile; git add www; git commit -m'build'"
+    "preversion": "harp compile; git add www; git commit -m'build'",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": "0.10.x",
@@ -22,6 +24,8 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "harp": "*",
-    "harp-static": "~0.1.0"
-  }
+    "harp-static": "~0.1.0",
+    "snyk": "^1.150.0"
+  },
+  "snyk": true
 }
